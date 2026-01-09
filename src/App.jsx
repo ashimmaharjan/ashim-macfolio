@@ -1,16 +1,19 @@
-import { useState } from "react";
-import "./App.css";
-import { Welcome, Navbar } from "#components";
-import Dock from "#components/Dock";
+import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
+
+import { Welcome, Navbar, Dock } from "#components";
+import { Terminal } from "#windows";
+
+gsap.registerPlugin(Draggable);
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <section>
       <Navbar />
       <Welcome />
       <Dock />
+
+      <Terminal />
     </section>
   );
 }
